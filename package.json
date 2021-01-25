@@ -1,0 +1,31 @@
+{
+  "name": "gTrends",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "e2e": "node ./tests/integration/trendDownload.js",
+    "test": "test"
+  },
+  "pre-push": [
+    "test"
+  ],
+  "repository": "",
+  "keyword": [],
+  "author": "Eugene T",
+  "devDepependencies": {},
+  "dependencies": {
+    "@fast-csv/format": "^4.3.0",
+    "@fast-csv/parse": "^4.3.6",
+    "csv-parser": "^2.3.3",
+    "fast-csv": "^4.3.6",
+    "gmail-send": "^1.8.10",
+    "google-trends-api": "^4.9.0",
+    "https-proxy-agent": "^5.0.0",
+    "jquery": "^3.5.1",
+    "json-2-csv": "^3.7.8",
+    "node-cron": "^2.0.3",
+    "sleep": "^6.2.0"
+  }
+}

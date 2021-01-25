@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width, initial-scale=1">
+<title> Google Trends </title>
+</head>
+
+<html>
+<body>
+<script> src="jquery.min.js"</script>
+<script> 
+function opsi (data) {
+	var allRows = data.split(/\r?\n/);
+	var table = "<table>";
+	for (var singleRow=0; singleRow<allrows.length; singleRow++){
+		if (singleRow === 0){
+			table += "<thread>";
+			table += "<tr>";
+		}
+		else {
+			table +="<tr>";
+		}
+		var rowCells = allRows[singleRow].split(',');
+		for (var rowSingleCell = 0; rowSingleCell<rowCells.length; rowCells++){
+			if(singleRow === 0){
+				table += "<tr>";
+				table += rowCells[rowSingleCell];
+				table += "</tr>";
+			}
+			else{
+				table +="<td>";
+				table += rowCells[rowSingleCell];
+				table += "</td>"
+			}
+		}
+		if(singleRow === 0) {
+			table += "</tr>";
+			table += "</thread>";
+			table += "</tbody>";
+		}
+		else{
+			table += "</tr>";
+		} 
+	}
+	table += "</tbody>";
+	table += "/table";
+	$("body").append(table);
+}
+$.ajax({
+	url: "Covid-US-FL-2021-1-23-18-30-0-873.csv",
+	dataType: "text"
+}).done(opsi);
+
+
+
+
+</script>
+</body>
+</html>
